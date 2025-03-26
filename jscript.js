@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Validate form
         if (validateForm()) {
             // If validation passes, show success message
-            alert('Registration Successful!');
+            alert('Registration Successful! Welcome to Western Institute of Technology');
             form.reset();
         }
     });
