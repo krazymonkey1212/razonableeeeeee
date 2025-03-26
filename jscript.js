@@ -5,12 +5,12 @@ document.addEventListener('DOMContentLoaded', function() {
     form.addEventListener('submit', function(event) {
         event.preventDefault();
         
-        // Clear previous error messages
+        
         clearErrors();
         
-        // Validate form
+        
         if (validateForm()) {
-            // If validation passes, show success message
+            
             alert('Registration Successful! Welcome to Western Institute of Technology');
             form.reset();
         }
@@ -19,21 +19,21 @@ document.addEventListener('DOMContentLoaded', function() {
     function validateForm() {
         let isValid = true;
         
-        // First Name validation
+        
         const firstName = document.getElementById('firstName');
         if (firstName.value.trim() === '') {
             showError(firstName, 'First Name is required');
             isValid = false;
         }
         
-        // Last Name validation
+        
         const lastName = document.getElementById('lastName');
         if (lastName.value.trim() === '') {
             showError(lastName, 'Last Name is required');
             isValid = false;
         }
         
-        // Email validation
+        
         const email = document.getElementById('email');
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email.value)) {
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
             isValid = false;
         }
         
-        // Birth Date validation
+        
         const birthDate = document.getElementById('birthDate');
         if (birthDate.value === '') {
             showError(birthDate, 'Birth Date is required');
@@ -60,21 +60,21 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
         
-        // Username validation
+        
         const username = document.getElementById('username');
         if (username.value.trim() === '' || username.value.length < 4) {
             showError(username, 'Username must be at least 4 characters long');
             isValid = false;
         }
         
-        // Password validation
+        
         const password = document.getElementById('password');
         if (password.value.length < 8) {
             showError(password, 'Password must be at least 8 characters long');
             isValid = false;
         }
         
-        // Gender validation
+        
         const genderInputs = document.getElementsByName('gender');
         let genderSelected = false;
         for (let radio of genderInputs) {
@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
             isValid = false;
         }
         
-        // Course validation
+        
         const course = document.getElementById('course');
         if (course.value === '') {
             showError(course, 'Please select a course');
@@ -111,11 +111,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function clearErrors() {
-        // Remove all existing error messages
+        
         const errors = document.querySelectorAll('.error');
         errors.forEach(error => error.remove());
         
-        // Remove error input styling
+        
         const errorInputs = document.querySelectorAll('.error-input');
         errorInputs.forEach(input => input.classList.remove('error-input'));
     }
